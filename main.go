@@ -18,17 +18,17 @@ func main() {
 		tmpl := template.Must(template.ParseFiles("templates/index.html"))
 		tmpl.Execute(w, nil)
 	})
-	http.HandleFunc("/signups", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/signup", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("templates/signup.html"))
 		tmpl.Execute(w, nil)
 	})
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	fmt.Println("server is running")
-	//log.Fatal(http.ListenAndServe(":80", nil))
-	go http.ListenAndServe(":80", http.HandlerFunc(redirectToHttps))
+	log.Fatal(http.ListenAndServe(":8051", nil))
+	//go http.ListenAndServe(":80", http.HandlerFunc(redirectToHttps))
 
-	log.Fatal(http.ListenAndServeTLS(":443", certPath, keyPath, nil))
+	//log.Fatal(http.ListenAndServeTLS(":443", certPath, keyPath, nil))
 }
 
 func redirectToHttps(w http.ResponseWriter, r *http.Request) {
