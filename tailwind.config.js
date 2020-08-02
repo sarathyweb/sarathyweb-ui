@@ -1,10 +1,10 @@
-const tailwindui = require('@tailwindcss/ui')({
-      layout: 'sidebar',
-});
-
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  purge: {
+    // enabled: true,
+    content: ['./templates/*.html'],
+  },
   theme: {
     extend: {
       fontFamily: {
@@ -12,8 +12,7 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [
-    tailwindui,
+    require('@tailwindcss/ui'),
   ]
-};
+}
