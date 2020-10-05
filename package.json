@@ -4,7 +4,7 @@
   "description": "Multi-Cloud Web Application Hosting Platform",
   "main": "index.js",
   "scripts": {
-    "build": "postcss ./static/css/style.css -o ./static/dist/style.css",
+    "build": "tailwind build ./static/css/style.css -o ./static/dist/style.css",
     "watch": "watch \"npm run build\" ./templates"
   },
   "keywords": [],
@@ -12,13 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/ui": "^0.1.4",
-    "watch": "^1.0.2"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.0.5",
-    "postcss-cli": "^7.1.2",
+    "watch": "^1.0.2",
     "tailwindcss": "^1.8.10"
   }
 }
