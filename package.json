@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tailwind build ./static/css/style.css -o ./static/dist/style.css",
-    "watch": "watch \"npm run build\" ./templates"
+    "watch": "watch \"npm run build\" ./templates/"
   },
   "keywords": [],
   "author": "Partha Sarathy Thanka Raj",
